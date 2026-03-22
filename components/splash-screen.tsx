@@ -49,17 +49,6 @@ export function SplashScreen() {
             animate={{ y: startExit ? -16 : 0, opacity: startExit ? 0 : 1 }}
             transition={{ duration: 0.5, ease: "easeIn" }}
           >
-            {/* Greeting line */}
-            <p className="text-neutral-600 text-xs font-mono tracking-[0.3em] uppercase">
-              <EncryptedText
-                text="Initialising..."
-                revealDelayMs={60}
-                flipDelayMs={40}
-                encryptedClassName="text-neutral-700"
-                revealedClassName="text-neutral-500"
-              />
-            </p>
-
             {/* Main text */}
             <h1 className="text-white font-bold text-xl sm:text-2xl tracking-tight">
               <EncryptedText
