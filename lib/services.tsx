@@ -1,5 +1,6 @@
 import { SiApple, SiAndroid, SiOpenai } from "react-icons/si";
-import { TbWorldWww, TbServerBolt, TbRobot } from "react-icons/tb";
+import { TbServerBolt, TbRobot, TbCode } from "react-icons/tb";
+import { TbCube3dSphere } from "react-icons/tb";
 
 export interface Service {
   id: string;
@@ -27,8 +28,8 @@ export const services: Service[] = [
   },
   {
     id: "web",
-    icon: <TbWorldWww size={24} className="text-white/70" />,
-    iconLg: <TbWorldWww size={32} className="text-white/80" />,
+    icon: <TbCube3dSphere size={24} className="text-white/70" />,
+    iconLg: <TbCube3dSphere size={32} className="text-white/80" />,
     title: "Web Development",
     short: "Custom, high-performance websites and web apps tailored to your brand.",
     description: "From marketing sites to full-stack SaaS platforms — we build fast, beautiful, and scalable web products using Next.js, React, and modern cloud infrastructure. Every project is optimised for performance, SEO, and conversion.",

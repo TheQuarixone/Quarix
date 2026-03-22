@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { IconArrowRight, IconX } from "@tabler/icons-react";
 import { SiApple, SiAndroid } from "react-icons/si";
-import { TbWorldWww, TbServerBolt, TbRobot } from "react-icons/tb";
+import { TbServerBolt, TbRobot, TbCube3dSphere } from "react-icons/tb";
 import { SiOpenai } from "react-icons/si";
 import { type Service, services } from "@/lib/services";
 
@@ -116,7 +116,7 @@ export function ServiceCards() {
         >
           <div className="flex flex-col gap-4">
             <div className="w-12 h-12 rounded-xl border border-white/10 bg-white/5 flex items-center justify-center">
-              <TbWorldWww size={24} className="text-white/70" />
+              <TbCube3dSphere size={24} className="text-white/70" />
             </div>
             <div>
               <h3 className="text-white font-black text-xl sm:text-2xl lg:text-3xl leading-tight mb-2">Web Development</h3>
