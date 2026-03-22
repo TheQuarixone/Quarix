@@ -7,7 +7,7 @@ import { IconMenu2, IconX } from "@tabler/icons-react";
 
 const links = [
   { label: "About", href: "/#about" },
-  { label: "Service", href: "/#service" },
+  { label: "Services", href: "/#services" },
   { label: "Works", href: "/#works" },
   { label: "Contact", href: "/contact" },
 ];

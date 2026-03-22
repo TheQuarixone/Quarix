@@ -5,7 +5,7 @@ import { Home, Briefcase, FolderOpen, Mail } from "lucide-react";
 
 const navItems = [
   { name: "Home", url: "/", icon: Home },
-  { name: "Services", url: "#service", icon: Briefcase },
+  { name: "Services", url: "#services", icon: Briefcase },
   { name: "Portfolio", url: "#works", icon: FolderOpen },
   { name: "Contact", url: "#contact", icon: Mail },
 ];

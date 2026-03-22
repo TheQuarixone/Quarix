@@ -127,7 +127,7 @@ export default function Home() {
           <nav className="hidden sm:flex items-center gap-1">
             {[
               { label: "About", href: "#about" },
-              { label: "Service", href: "#service" },
+              { label: "Services", href: "#services" },
               { label: "Works", href: "#works" },
               { label: "Contact", href: "/contact" },
             ].map((item) => (
@@ -344,8 +344,8 @@ export default function Home() {
               </div>
 
               <div className="flex flex-col sm:flex-row flex-wrap gap-3 pt-2">
-                <a href="#service" className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-white text-black text-sm font-semibold hover:bg-neutral-200 transition-colors">
-                  Explore services <IconArrowRight size={14} />
+                <a href="#services" className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-white text-black text-sm font-semibold hover:bg-neutral-200 transition-colors">
+                  Explore Services <IconArrowRight size={14} />
                 </a>
                 <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-white/15 text-neutral-300 text-sm font-medium hover:bg-white/5 hover:border-white/25 transition-colors">
                   Start a conversation
@@ -368,7 +368,7 @@ export default function Home() {
       </section>
 
       {/* ── Services ── */}
-      <section id="service" className="relative bg-black pt-8 sm:pt-10">
+      <section id="services" className="relative bg-black pt-8 sm:pt-10">
         {/* Background gradient image — full width, responsive height */}
         <div
           className="absolute inset-x-0 top-0 h-[220px] sm:h-[320px] lg:h-[420px] pointer-events-none"

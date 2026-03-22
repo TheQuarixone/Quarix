@@ -60,7 +60,7 @@ export default function ContactPage() {
           <nav className="hidden sm:flex items-center gap-1">
             {[
               { label: "About", href: "/#about" },
-              { label: "Service", href: "/#service" },
+              { label: "Services", href: "/#services" },
               { label: "Works", href: "/#works" },
               { label: "Contact", href: "/contact" },
             ].map((item) => (
