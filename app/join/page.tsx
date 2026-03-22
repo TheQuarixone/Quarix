@@ -49,14 +49,14 @@ export default function JoinTeamPage() {
       {/* Dashed lines */}
       <div className="fixed inset-0 pointer-events-none z-[100] flex justify-center">
         <div className="relative w-full max-w-7xl">
-          <div className="absolute inset-y-0 left-6 lg:left-10 border-l border-dashed border-white/25" />
-          <div className="absolute inset-y-0 right-6 lg:right-10 border-r border-dashed border-white/25" />
+          <div className="absolute inset-y-0 left-4 lg:left-10 border-l border-dashed border-white/25" />
+          <div className="absolute inset-y-0 right-4 lg:right-10 border-r border-dashed border-white/25" />
         </div>
       </div>
 
       {/* Navbar */}
       <header className="sticky top-0 z-50 border-b border-dashed border-white/25 bg-black/80 backdrop-blur-md">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-3 sm:py-4 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 lg:px-10 py-3 sm:py-4 flex items-center justify-between">
           <Link href="/">
             <Image src="/logo.svg" alt="Quarix" width={140} height={42} className="w-[110px] sm:w-[140px] h-auto" priority />
           </Link>
@@ -90,7 +90,7 @@ export default function JoinTeamPage() {
           </div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-14 lg:px-20 py-10 sm:py-20">
+        <div className="relative z-10 max-w-7xl mx-auto px-8 sm:px-14 lg:px-20 py-10 sm:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-start">
 
             {/* ── Left: info panel ── */}

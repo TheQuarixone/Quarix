@@ -68,14 +68,14 @@ export default function TeamPage() {
           {/* Vertical dashed lines */}
           <div className="absolute inset-0 pointer-events-none z-[100] flex justify-center">
             <div className="relative w-full max-w-7xl">
-              <div className="absolute inset-y-0 left-6 lg:left-10 border-l border-dashed border-white/25" />
-              <div className="absolute inset-y-0 right-6 lg:right-10 border-r border-dashed border-white/25" />
+              <div className="absolute inset-y-0 left-4 lg:left-10 border-l border-dashed border-white/25" />
+              <div className="absolute inset-y-0 right-4 lg:right-10 border-r border-dashed border-white/25" />
             </div>
           </div>
 
           {/* Navbar */}
           <header className="sticky top-0 z-50 border-b border-dashed border-white/25 bg-black/80 backdrop-blur-md">
-            <div className="max-w-7xl mx-auto px-6 lg:px-10 py-3 sm:py-4 flex items-center justify-between">
+            <div className="max-w-7xl mx-auto px-4 lg:px-10 py-3 sm:py-4 flex items-center justify-between">
               <Link href="/">
                 <Image src="/logo.svg" alt="Quarix" width={140} height={42} className="w-[110px] sm:w-[140px] lg:w-[170px] h-auto" priority />
               </Link>
@@ -151,14 +151,14 @@ export default function TeamPage() {
         {/* Vertical dashed lines — scoped to this wrapper only */}
         <div className="absolute inset-0 pointer-events-none z-[100] flex justify-center">
           <div className="relative w-full max-w-7xl">
-            <div className="absolute inset-y-0 left-6 lg:left-10 border-l border-dashed border-white/25" />
-            <div className="absolute inset-y-0 right-6 lg:right-10 border-r border-dashed border-white/25" />
+            <div className="absolute inset-y-0 left-4 lg:left-10 border-l border-dashed border-white/25" />
+            <div className="absolute inset-y-0 right-4 lg:right-10 border-r border-dashed border-white/25" />
           </div>
         </div>
 
         {/* ── Navbar ── */}
         <header className="sticky top-0 z-50 border-b border-dashed border-white/25 bg-black/80 backdrop-blur-md">
-          <div className="max-w-7xl mx-auto px-6 lg:px-10 py-3 sm:py-4 flex items-center justify-between">
+          <div className="max-w-7xl mx-auto px-4 lg:px-10 py-3 sm:py-4 flex items-center justify-between">
             <Link href="/">
               <Image src="/logo.svg" alt="Quarix" width={140} height={42} className="w-[110px] sm:w-[140px] lg:w-[170px] h-auto" priority />
             </Link>
@@ -198,7 +198,7 @@ export default function TeamPage() {
             </div>
           </div>
 
-          <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-14 lg:px-20 pt-16 sm:pt-24 pb-16 sm:pb-20 flex flex-col items-center text-center gap-6">
+          <div className="relative z-10 max-w-7xl mx-auto px-8 sm:px-14 lg:px-20 pt-16 sm:pt-24 pb-16 sm:pb-20 flex flex-col items-center text-center gap-6">
             <span className="inline-flex items-center gap-2 text-xs font-medium bg-white/10 border border-white/10 rounded-full px-3 py-1.5">
               <span className="text-neutral-300">The Team</span>
             </span>
@@ -216,7 +216,7 @@ export default function TeamPage() {
 
         {/* ── Team Grid ── */}
         <section className="relative bg-black py-16 sm:py-24">
-          <div className="max-w-7xl mx-auto px-6 sm:px-14 lg:px-20">
+          <div className="max-w-7xl mx-auto px-8 sm:px-14 lg:px-20">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {team.map((member) => (
                 <div key={member.name} className="group flex flex-col gap-5">
@@ -267,7 +267,7 @@ export default function TeamPage() {
 
         {/* ── CTA ── */}
         <section className="relative bg-black pb-20 sm:pb-28">
-          <div className="max-w-7xl mx-auto px-6 sm:px-14 lg:px-20">
+          <div className="max-w-7xl mx-auto px-8 sm:px-14 lg:px-20">
             <div className="rounded-3xl border border-white/10 bg-white/[0.02] p-8 sm:p-12 flex flex-col sm:flex-row items-center justify-between gap-8 text-center sm:text-left">
               <div className="flex flex-col gap-3">
                 <h2 className="text-2xl sm:text-3xl font-black text-white">Want to join the team?</h2>

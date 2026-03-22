@@ -111,14 +111,14 @@ export default function Home() {
         {/* Vertical dashed lines — scoped to this wrapper only */}
         <div className="absolute inset-0 pointer-events-none z-[100] flex justify-center">
           <div className="relative w-full max-w-7xl">
-            <div className="absolute inset-y-0 left-6 lg:left-10 border-l border-dashed border-white/25" />
-            <div className="absolute inset-y-0 right-6 lg:right-10 border-r border-dashed border-white/25" />
+            <div className="absolute inset-y-0 left-4 lg:left-10 border-l border-dashed border-white/25" />
+            <div className="absolute inset-y-0 right-4 lg:right-10 border-r border-dashed border-white/25" />
           </div>
         </div>
 
       {/* ── Navbar ── */}
       <header className="sticky top-0 z-50 border-b border-dashed border-white/25 bg-black/80 backdrop-blur-md">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-3 sm:py-4 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 lg:px-10 py-3 sm:py-4 flex items-center justify-between">
           <a href="/">
             <Image src="/logo.svg" alt="Quarix" width={140} height={42} className="w-[110px] sm:w-[140px] lg:w-[170px] h-auto" priority />
           </a>
@@ -159,7 +159,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-14 lg:px-20 pt-10 sm:pt-16 lg:pt-24 pb-12 sm:pb-16 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10 lg:gap-0 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-8 sm:px-14 lg:px-20 pt-10 sm:pt-16 lg:pt-24 pb-12 sm:pb-16 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10 lg:gap-0 w-full">
 
           {/* Left */}
           <div className="flex flex-col gap-5 sm:gap-6 w-full lg:max-w-2xl">
@@ -194,13 +194,13 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-3">
               <a
                 href="#services"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-white text-black text-sm font-semibold hover:bg-neutral-200 transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-white text-black text-sm font-semibold hover:bg-neutral-200 transition-colors w-full sm:w-auto"
               >
                 Explore Services
                 <IconArrowRight size={14} />
               </a>
-              <Link href="/contact">
-                <ShimmerButton className="text-sm font-semibold px-6 py-3">
+              <Link href="/contact" className="w-full sm:w-auto">
+                <ShimmerButton className="text-sm font-semibold px-6 py-3 w-full sm:w-auto">
                   Get in Touch
                 </ShimmerButton>
               </Link>
@@ -246,7 +246,7 @@ export default function Home() {
 
       {/* ── Social Links ── */}
       <div className="border-y border-dashed border-white/25">
-      <div className="max-w-7xl mx-auto px-6 sm:px-14 lg:px-20 py-6 sm:py-8">
+      <div className="max-w-7xl mx-auto px-8 sm:px-14 lg:px-20 py-6 sm:py-8">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
 
           {/* X / Twitter */}
@@ -312,7 +312,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-14 lg:px-20 py-16 sm:py-24">
+        <div className="relative z-10 max-w-7xl mx-auto px-8 sm:px-14 lg:px-20 py-16 sm:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
             <div className="lg:col-span-7 flex flex-col gap-6">
@@ -385,7 +385,7 @@ export default function Home() {
             />
           </div>
         </div>
-          <div className="max-w-7xl mx-auto px-6 sm:px-14 lg:px-20 py-8 sm:py-10 relative z-10">
+          <div className="max-w-7xl mx-auto px-8 sm:px-14 lg:px-20 py-8 sm:py-10 relative z-10">
 
           {/* Header */}
           <div className="flex flex-col gap-4 mb-8">
@@ -438,7 +438,7 @@ export default function Home() {
 
       {/* ── Works / Portfolio ── */}
       <section id="works" className="relative bg-black py-20 sm:py-28">
-        <div className="max-w-7xl mx-auto px-6 sm:px-14 lg:px-20">
+        <div className="max-w-7xl mx-auto px-8 sm:px-14 lg:px-20">
 
           {/* Header */}
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
@@ -466,7 +466,7 @@ export default function Home() {
 
       {/* ── Contact Section ── */}
       <section id="contact" className="relative bg-black py-14 sm:py-24">
-        <div className="max-w-7xl mx-auto px-6 sm:px-14 lg:px-20">
+        <div className="max-w-7xl mx-auto px-8 sm:px-14 lg:px-20">
           <div className="rounded-3xl border border-white/10 bg-neutral-950 overflow-hidden">
 
             {/* Centered content */}

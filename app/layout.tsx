@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased scroll-smooth scroll-pt-20 sm:scroll-pt-24" suppressHydrationWarning>
       <body
-        className="min-h-full flex flex-col bg-black dark:bg-black"
+        className="min-h-full flex flex-col bg-black dark:bg-black overflow-x-hidden"
         style={{
           fontFamily:
             "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif",
