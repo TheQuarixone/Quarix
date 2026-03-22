@@ -1,9 +1,15 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { IconBrandGithub, IconBrandLinkedin, IconBrandX, IconArrowRight } from "@tabler/icons-react";
+import { IconBrandGithub, IconBrandLinkedin, IconBrandX, IconArrowRight, IconLock } from "@tabler/icons-react";
 import { DotPattern } from "@/components/ui/dot-pattern";
 import { MobileNav } from "@/components/mobile-nav";
 import { Footer } from "@/components/footer";
+import { ShimmerButton } from "@/components/ui/shimmer-button";
+import { ShineBorder } from "@/components/ui/shine-border";
+import { motion } from "motion/react";
 
 const team = [
   {
@@ -30,6 +36,112 @@ const team = [
 ];
 
 export default function TeamPage() {
+  const [hasAccess, setHasAccess] = useState(false);
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    if (sessionStorage.getItem("quarix_team_access") === "true") {
+      setHasAccess(true);
+    }
+  }, []);
+
+  const handleAccess = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+    setLoading(true);
+    // Simulate API call / validation
+    await new Promise((r) => setTimeout(r, 800));
+    sessionStorage.setItem("quarix_team_access", "true");
+    setHasAccess(true);
+    setLoading(false);
+  };
+
+  if (!mounted) return null;
+
+  if (!hasAccess) {
+    return (
+      <main className="min-h-screen bg-black text-white flex flex-col relative">
+        <div className="relative flex-1 flex flex-col">
+          {/* Vertical dashed lines */}
+          <div className="absolute inset-0 pointer-events-none z-[100] flex justify-center">
+            <div className="relative w-full max-w-7xl">
+              <div className="absolute inset-y-0 left-6 lg:left-10 border-l border-dashed border-white/25" />
+              <div className="absolute inset-y-0 right-6 lg:right-10 border-r border-dashed border-white/25" />
+            </div>
+          </div>
+
+          {/* Navbar */}
+          <header className="sticky top-0 z-50 border-b border-dashed border-white/25 bg-black/80 backdrop-blur-md">
+            <div className="max-w-7xl mx-auto px-6 lg:px-10 py-3 sm:py-4 flex items-center justify-between">
+              <Link href="/">
+                <Image src="/logo.svg" alt="Quarix" width={140} height={42} className="w-[110px] sm:w-[140px] lg:w-[170px] h-auto" priority />
+              </Link>
+              <nav className="hidden sm:flex items-center gap-1">
+                {[
+                  { label: "About", href: "/#about" },
+                  { label: "Service", href: "/#service" },
+                  { label: "Works", href: "/#works" },
+                  { label: "Contact", href: "/contact" },
+                ].map((item) => (
+                  <Link key={item.label} href={item.href}
+                    className="px-3 sm:px-4 py-2 text-xs sm:text-sm text-neutral-400 hover:text-white transition-colors rounded-md hover:bg-white/5">
+                    {item.label}
+                  </Link>
+                ))}
+              </nav>
+              <MobileNav />
+            </div>
+          </header>
+
+          <div className="flex-1 flex items-center justify-center p-6 relative overflow-hidden">
+            <div className="absolute inset-0 flex justify-center pointer-events-none">
+              <DotPattern width={24} height={24} cr={1} className="text-white/10 [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,white_20%,transparent_100%)]" />
+            </div>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="relative z-10 w-full max-w-md"
+            >
+              <div className="relative rounded-3xl border border-white/10 bg-neutral-950 overflow-hidden p-8 sm:p-10 flex flex-col items-center text-center gap-6">
+                <ShineBorder shineColor={["#ffffff40", "#ffffff10", "#ffffff50"]} duration={8} borderWidth={1} />
+                
+                <div className="w-16 h-16 rounded-2xl border border-white/10 bg-white/5 flex items-center justify-center shadow-xl mb-2">
+                  <IconLock size={28} className="text-white/70" />
+                </div>
+                
+                <div className="flex flex-col gap-2">
+                  <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">Team Access</h1>
+                  <p className="text-neutral-400 text-sm leading-relaxed">
+                    Please enter your email address to view our team members and their portfolios.
+                  </p>
+                </div>
+
+                <form onSubmit={handleAccess} className="w-full flex flex-col gap-4 mt-2 relative z-20">
+                  <input
+                    type="email"
+                    required
+                    placeholder="name@company.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-white/30 focus:bg-white/8 transition-all text-center"
+                  />
+                  <ShimmerButton type="submit" className="w-full py-3.5 text-sm font-semibold" disabled={loading}>
+                    {loading ? "Verifying..." : "Get Access"}
+                  </ShimmerButton>
+                </form>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+        <Footer />
+      </main>
+    );
+  }
+
   return (
     <main className="min-h-screen bg-black text-white flex flex-col relative">
 
@@ -37,16 +149,16 @@ export default function TeamPage() {
       <div className="relative">
 
         {/* Vertical dashed lines — scoped to this wrapper only */}
-        <div className="absolute inset-0 pointer-events-none z-[100] flex justify-center px-4 sm:px-6 lg:px-0">
+        <div className="absolute inset-0 pointer-events-none z-[100] flex justify-center">
           <div className="relative w-full max-w-7xl">
-            <div className="absolute inset-y-0 left-4 sm:left-6 lg:left-8 border-l border-dashed border-white/25" />
-            <div className="absolute inset-y-0 right-4 sm:right-6 lg:right-8 border-r border-dashed border-white/25" />
+            <div className="absolute inset-y-0 left-6 lg:left-10 border-l border-dashed border-white/25" />
+            <div className="absolute inset-y-0 right-6 lg:right-10 border-r border-dashed border-white/25" />
           </div>
         </div>
 
         {/* ── Navbar ── */}
         <header className="sticky top-0 z-50 border-b border-dashed border-white/25 bg-black/80 backdrop-blur-md">
-          <div className="max-w-7xl mx-auto px-6 sm:px-8 py-3 sm:py-4 flex items-center justify-between">
+          <div className="max-w-7xl mx-auto px-6 lg:px-10 py-3 sm:py-4 flex items-center justify-between">
             <Link href="/">
               <Image src="/logo.svg" alt="Quarix" width={140} height={42} className="w-[110px] sm:w-[140px] lg:w-[170px] h-auto" priority />
             </Link>
