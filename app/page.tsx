@@ -251,7 +251,7 @@ export default function Home() {
 
           {/* X / Twitter */}
           <a
-            href="https://x.com"
+            href="https://x.com/Quarixone"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center justify-between gap-4 px-5 py-4 rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] hover:border-white/20 transition-all"
@@ -267,7 +267,7 @@ export default function Home() {
 
           {/* GitHub */}
           <a
-            href="https://github.com"
+            href="https://github.com/TheQuarixone"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center justify-between gap-4 px-5 py-4 rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] hover:border-white/20 transition-all"

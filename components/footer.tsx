@@ -88,7 +88,7 @@ export function Footer() {
                 className="text-[12px] text-neutral-400 hover:text-white transition-colors">
                 Quarixone@gmail.com
               </a>
-              <a href="https://github.com/TheQuarixone/Quarix" target="_blank" rel="noopener noreferrer"
+              <a href="https://github.com/TheQuarixone" target="_blank" rel="noopener noreferrer"
                 className="w-8 h-8 rounded-lg border border-white/10 bg-white/[0.03] flex items-center justify-center text-neutral-400 hover:text-white hover:border-white/25 hover:bg-white/[0.07] transition-all">
                 <IconBrandGithub size={15} />
               </a>
