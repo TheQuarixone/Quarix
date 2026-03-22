@@ -369,22 +369,18 @@ export default function Home() {
 
       {/* ── Services ── */}
       <section id="service" className="relative bg-black pt-8 sm:pt-10">
-        {/* Background gradient image — clipped inside the dashed lines */}
-        <div className="absolute inset-x-0 top-0 h-[420px] pointer-events-none flex justify-center px-4 sm:px-6 lg:px-0">
-          <div className="relative w-full max-w-7xl overflow-hidden">
-            <div
-              className="absolute inset-x-8 top-0 h-full"
-              style={{
-                backgroundImage: "url('/service.png')",
-                backgroundSize: "cover",
-                backgroundPosition: "top center",
-                backgroundRepeat: "no-repeat",
-                maskImage: "linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%)",
-                WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%)",
-              }}
-            />
-          </div>
-        </div>
+        {/* Background gradient image — full width, responsive height */}
+        <div
+          className="absolute inset-x-0 top-0 h-[220px] sm:h-[320px] lg:h-[420px] pointer-events-none"
+          style={{
+            backgroundImage: "url('/service.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "top center",
+            backgroundRepeat: "no-repeat",
+            maskImage: "linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0) 100%)",
+            WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0) 100%)",
+          }}
+        />
           <div className="max-w-7xl mx-auto px-8 sm:px-14 lg:px-20 py-8 sm:py-10 relative z-10">
 
           {/* Header */}
