@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { SplashScreen } from "@/components/splash-screen";
 import { ThemeProvider } from "@/components/theme-provider";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Quarix",
@@ -25,6 +26,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <SplashScreen />
           {children}
+          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>
