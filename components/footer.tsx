@@ -84,7 +84,11 @@ export function Footer() {
           <div className="relative z-10 border-t border-white/[0.07] px-6 sm:px-12 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
             <p className="text-[12px] text-neutral-400">© {new Date().getFullYear()} QuariX. All rights reserved.</p>
             <div className="flex items-center gap-3">
-              <a href="https://github.com/Gokulakrishnxn/Quarixone" target="_blank" rel="noopener noreferrer"
+              <a href="mailto:Quarixone@gmail.com"
+                className="text-[12px] text-neutral-400 hover:text-white transition-colors">
+                Quarixone@gmail.com
+              </a>
+              <a href="https://github.com/TheQuarixone/Quarix" target="_blank" rel="noopener noreferrer"
                 className="w-8 h-8 rounded-lg border border-white/10 bg-white/[0.03] flex items-center justify-center text-neutral-400 hover:text-white hover:border-white/25 hover:bg-white/[0.07] transition-all">
                 <IconBrandGithub size={15} />
               </a>

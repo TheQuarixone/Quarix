@@ -111,13 +111,17 @@ export default function ContactPage() {
               {/* Info cards */}
               <div className="flex flex-col gap-3">
                 {[
-                  { label: "Response time", value: "< 24 hours" },
-                  { label: "Email", value: "hello@quarix.io" },
-                  { label: "Based in", value: "India 🇮🇳" },
+                  { label: "Response time", value: "< 24 hours", href: null },
+                  { label: "Email", value: "Quarixone@gmail.com", href: "mailto:Quarixone@gmail.com" },
+                  { label: "Based in", value: "India 🇮🇳", href: null },
                 ].map((item) => (
                   <div key={item.label} className="flex items-center justify-between px-5 py-3.5 rounded-xl border border-white/10 bg-white/[0.02]">
                     <span className="text-xs text-neutral-500">{item.label}</span>
-                    <span className="text-xs text-white font-medium">{item.value}</span>
+                    {item.href ? (
+                      <a href={item.href} className="text-xs text-white font-medium hover:text-neutral-300 transition-colors">{item.value}</a>
+                    ) : (
+                      <span className="text-xs text-white font-medium">{item.value}</span>
+                    )}
                   </div>
                 ))}
               </div>
