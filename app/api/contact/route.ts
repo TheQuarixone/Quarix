@@ -1,6 +1,6 @@
 import { Resend } from "resend";
 import { NextRequest, NextResponse } from "next/server";
-import { supabase } from "@/lib/supabase";
+import { getSupabase } from "@/lib/supabase";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -21,6 +21,8 @@ export async function POST(req: NextRequest) {
     if (!isValidEmail(safeEmail)) {
       return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 });
     }
+
+    const supabase = getSupabase();
 
     // Save to Supabase
     const { error: dbError } = await supabase.from("contact_messages").insert([
