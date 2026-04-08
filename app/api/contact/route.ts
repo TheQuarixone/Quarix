@@ -1,7 +1,13 @@
 import { Resend } from "resend";
 import { NextRequest, NextResponse } from "next/server";
+import { supabase } from "@/lib/supabase";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+
+function isValidEmail(value: string) {
+  // Basic format check; enough to prevent Resend 422 on malformed emails.
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+}
 
 export async function POST(req: NextRequest) {
   try {
@@ -11,10 +17,31 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Missing required fields." }, { status: 400 });
     }
 
+    const safeEmail = typeof email === "string" ? email.trim() : "";
+    if (!isValidEmail(safeEmail)) {
+      return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 });
+    }
+
+    // Save to Supabase
+    const { error: dbError } = await supabase.from("contact_messages").insert([
+      {
+        name,
+        email: safeEmail,
+        phone,
+        service,
+        message,
+        source: "quarix.one/contact",
+      },
+    ]);
+
+    if (dbError) {
+      console.error("[contact/route] Supabase insert error:", dbError);
+    }
+
     await resend.emails.send({
       from: "QuariX Contact <noreply@quarix.one>",
       to: ["Quarixone@gmail.com"],
-      replyTo: email,
+      replyTo: safeEmail,
       subject: `New enquiry: ${service} — from ${name}`,
       html: `
         <div style="font-family:sans-serif;max-width:600px;margin:0 auto;background:#000;color:#fff;padding:32px;border-radius:12px;border:1px solid #222;">
@@ -31,7 +58,7 @@ export async function POST(req: NextRequest) {
             <tr>
               <td style="padding:10px 14px;background:#111;border-bottom:1px solid #222;">
                 <span style="font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:#555;">Email</span><br/>
-                <a href="mailto:${email}" style="font-size:14px;color:#aaa;">${email}</a>
+                <a href="mailto:${safeEmail}" style="font-size:14px;color:#aaa;">${safeEmail}</a>
               </td>
             </tr>
             ${phone ? `

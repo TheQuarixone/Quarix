@@ -1,0 +1,4 @@
+RESEND_API_KEY=re_ftnSTP1H_Pu1TdzdALtu2rwwxGGpxxu4p
+
+NEXT_PUBLIC_SUPABASE_URL=https://dgbxlhtpsonrlxizjqyc.supabase.co
+SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRnYnhsaHRwc29ucmx4aXpqcXljIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTYzMDU5MSwiZXhwIjoyMDkxMjA2NTkxfQ.TP3k7I7_t9fEd2_Pm5I-5IUeGdmJ62J-4LQOhFlm8UU   # keep this server-only, never exposed in client bundles
