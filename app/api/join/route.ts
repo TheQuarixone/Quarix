@@ -1,5 +1,6 @@
 import { Resend } from "resend";
 import { NextRequest, NextResponse } from "next/server";
+import { getSupabase } from "@/lib/supabase";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -12,6 +13,24 @@ export async function POST(req: NextRequest) {
     }
 
     const displayRole = role === "Other" && otherRole ? otherRole : role;
+
+    const supabase = getSupabase();
+
+    // Save to Supabase
+    const { error: dbError } = await supabase.from("team_applications").insert([
+      {
+        name,
+        email,
+        portfolio,
+        role: displayRole,
+        message,
+        source: "quarix.one/join",
+      },
+    ]);
+
+    if (dbError) {
+      console.error("[join/route] Supabase insert error:", dbError);
+    }
 
     await resend.emails.send({
       from: "QuariX Careers <noreply@quarix.one>",

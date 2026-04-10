@@ -63,10 +63,10 @@ export function Footer() {
                 <div className="flex flex-col gap-3">
                   <span className="text-[9px] font-semibold uppercase tracking-[0.18em] text-neutral-400">Legal</span>
                   {[
-                    { label: "Privacy Policy", href: "#" },
-                    { label: "Terms of Service", href: "#" },
-                    { label: "Cookie Policy", href: "#" },
-                    { label: "Refund Policy", href: "#" },
+                    { label: "Privacy Policy", href: "/legal/privacy" },
+                    { label: "Terms of Service", href: "/legal/terms" },
+                    { label: "Cookie Policy", href: "/legal/cookies" },
+                    { label: "Refund Policy", href: "/legal/refund" },
                   ].map((l) => (
                     <Link key={l.label} href={l.href}
                       className="text-[13px] text-neutral-300 hover:text-white transition-colors w-fit">
@@ -84,12 +84,17 @@ export function Footer() {
           <div className="relative z-10 border-t border-white/[0.07] px-6 sm:px-12 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
             <p className="text-[12px] text-neutral-400">© {new Date().getFullYear()} QuariX. All rights reserved.</p>
             <div className="flex items-center gap-3">
+              <a href="/llm.txt" target="_blank" rel="noopener noreferrer"
+                className="text-[12px] text-neutral-400 hover:text-white transition-colors">
+                llm.txt
+              </a>
+              <span className="text-neutral-600 text-[12px]">•</span>
               <a href="mailto:Quarixone@gmail.com"
                 className="text-[12px] text-neutral-400 hover:text-white transition-colors">
                 Quarixone@gmail.com
               </a>
               <a href="https://github.com/TheQuarixone" target="_blank" rel="noopener noreferrer"
-                className="w-8 h-8 rounded-lg border border-white/10 bg-white/[0.03] flex items-center justify-center text-neutral-400 hover:text-white hover:border-white/25 hover:bg-white/[0.07] transition-all">
+                className="w-8 h-8 ml-2 rounded-lg border border-white/10 bg-white/[0.03] flex items-center justify-center text-neutral-400 hover:text-white hover:border-white/25 hover:bg-white/[0.07] transition-all">
                 <IconBrandGithub size={15} />
               </a>
             </div>

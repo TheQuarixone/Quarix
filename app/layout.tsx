@@ -1,12 +1,73 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { SplashScreen } from "@/components/splash-screen";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
-  title: "Quarix",
-  description: "Freelance experts in custom Websites, Applications, AI Agents, AI Chatbots & MCP Servers.",
+  metadataBase: new URL("https://quarix.one"),
+  title: {
+    default: "QuariX | Premium Custom Software & AI Development",
+    template: "%s | QuariX",
+  },
+  description: "QuariX is a premium tech agency specializing in custom websites, iOS/Android applications, AI agents, AI chatbots, and MCP servers. We build scalable, high-performance digital solutions.",
+  keywords: [
+    "QuariX",
+    "Quarix",
+    "Custom Software Development",
+    "Web Development",
+    "Mobile App Development",
+    "iOS Apps",
+    "Android Apps",
+    "AI Agents",
+    "AI Chatbots",
+    "MCP Servers",
+    "Tech Agency",
+    "Freelance Developers",
+    "Next.js Experts",
+    "React Native Developers",
+    "AI Integration",
+  ],
+  authors: [{ name: "QuariX Team" }],
+  creator: "QuariX",
+  publisher: "QuariX",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    title: "QuariX | Premium Custom Software & AI Development",
+    description: "QuariX is a premium tech agency specializing in custom websites, iOS/Android applications, AI agents, AI chatbots, and MCP servers.",
+    url: "https://quarix.one",
+    siteName: "QuariX",
+    images: [
+      {
+        url: "/apple-icon.png", // You can replace this with a dedicated OG image later (e.g., 1200x630)
+        width: 800,
+        height: 800,
+        alt: "QuariX Logo",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "QuariX | Premium Custom Software & AI Development",
+    description: "QuariX is a premium tech agency specializing in custom websites, iOS/Android applications, AI agents, AI chatbots, and MCP servers.",
+    images: ["/apple-icon.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -24,7 +85,6 @@ export default function RootLayout({
         }}
       >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
-          <SplashScreen />
           {children}
           <SpeedInsights />
         </ThemeProvider>

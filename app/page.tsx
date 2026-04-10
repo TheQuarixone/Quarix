@@ -104,6 +104,7 @@ const avatars = [
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white flex flex-col relative">
+      <h1 className="sr-only">QuariX - Premium Custom Software, Web Development, and AI Agency</h1>
 
       {/* ── Dashed lines wrapper — ends before contact section ── */}
       <div className="relative">
@@ -177,12 +178,12 @@ export default function Home() {
             </a>
 
             {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.05] tracking-tight text-white">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.05] tracking-tight text-white">
               Plan. Build.{" "}
               <span style={{ WebkitTextStroke: "1.5px white", color: "transparent" }}>
                 Ship.
               </span>
-            </h1>
+            </h2>
 
             {/* Subheadline */}
             <p className="text-neutral-400 text-base sm:text-lg leading-relaxed max-w-xl">
@@ -330,7 +331,7 @@ export default function Home() {
 
               <div className="flex flex-col gap-4 text-neutral-400 text-base sm:text-lg leading-relaxed max-w-2xl">
                 <p>
-                  <strong className="text-neutral-200 font-semibold">QuariX</strong> is a freelance studio that plans, builds, and ships
+                  <strong className="text-neutral-200 font-semibold">QuariX</strong> is a premium tech agency and freelance studio that plans, builds, and ships
                   digital products end-to-end. We work with founders, startups, and product teams who need serious execution —
                   not slide decks — on the web, on mobile, and in AI.
                 </p>
