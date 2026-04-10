@@ -68,6 +68,22 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  alternates: {
+    canonical: "https://quarix.one",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "QuariX",
+  url: "https://quarix.one",
+  logo: "https://quarix.one/icon.png",
+  description: "QuariX is a premium tech agency specializing in custom websites, iOS/Android applications, AI agents, AI chatbots, and MCP servers.",
+  sameAs: [
+    "https://x.com/Quarixone",
+    "https://github.com/TheQuarixone"
+  ],
 };
 
 export default function RootLayout({
@@ -77,6 +93,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full antialiased scroll-smooth scroll-pt-20 sm:scroll-pt-24" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className="min-h-full flex flex-col bg-black dark:bg-black overflow-x-hidden"
         style={{
